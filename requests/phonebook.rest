@@ -2,8 +2,8 @@ POST http://localhost:3001/api/persons HTTP/1.1
 Content-Type:application/json
 
 {
-    "name": "davey crocket jr",
-    "number": "555-4444"
+    "name": "davey crocket sr",
+    "number": "556-4441"
 }
 
 ###
@@ -12,4 +12,18 @@ GET http://localhost:3001/api/persons HTTP/1.1
 
 ###
 
+GET http://localhost:3001/api/persons/609715dd4c6629230ba9e5 HTTP/1.1
+
+###
+
 DELETE http://localhost:3001/api/persons/6979
+
+###
+
+PUT http://localhost:3001/api/persons/60983c8e42d4631cb021c68f HTTP/1.1
+Content-Type:application/json
+
+{
+    "name": "davey crocket jr",
+    "number": "556-4444"
+}
