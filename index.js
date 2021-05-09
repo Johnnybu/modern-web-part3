@@ -5,7 +5,7 @@ const cors = require('cors');
 const Person = require('./models/person');
 const app = express();
 
-morgan.token('body', (req, res) => JSON.stringify(req.body));
+morgan.token('body', (req) => JSON.stringify(req.body));
 
 app.use(express.static('build'));
 app.use(express.json());
@@ -14,7 +14,7 @@ app.use(cors());
 
 app.get('/info', async (request, response) => {
   const count = await Person.countDocuments();
-  response.send(`<h3>Phonebook has info for ${count} people</h3>` + 
+  response.send(`<h3>Phonebook has info for ${count} people</h3>` +
     `<h3>${new Date()}</h3>`);
 });
 
@@ -48,7 +48,7 @@ app.delete('/api/persons/:id', async (request, response, next) => {
 });
 
 app.post('/api/persons', async (request, response, next) => {
-  const body = request.body
+  const body = request.body;
 
   try {
     const person = new Person({
